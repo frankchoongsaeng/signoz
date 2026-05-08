@@ -111,8 +111,8 @@ services:
     <<: *db-depend
     image: signoz/signoz:${VERSION:-v0.122.0}
     container_name: signoz
-    ports:
-      - "8080:8080" # signoz port
+    expose:
+      - "8080" # signoz port
     volumes:
       - sqlite:/var/lib/signoz/
     environment:
